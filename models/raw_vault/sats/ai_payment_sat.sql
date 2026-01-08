@@ -4,7 +4,7 @@ SELECT
 
   dbt_utils.generate_surrogate_key([COALESCE(TRIM(LOWER(PaymentID)), '')]) AS hub_payment_hashkey,
 
-  PaymentID,
+  PaymentMethod, Amount, TransactionDate, Status,
 
   CURRENT_TIMESTAMP() AS load_datetime
 

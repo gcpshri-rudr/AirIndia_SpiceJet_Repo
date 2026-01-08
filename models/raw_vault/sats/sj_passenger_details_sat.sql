@@ -4,7 +4,7 @@ SELECT
 
   dbt_utils.generate_surrogate_key([COALESCE(TRIM(LOWER(PassengerID)), '')]) AS hub_passenger_details_hashkey,
 
-  PassengerID,
+  FirstName, LastName, DOB, Email, CreatedDateTime, LastupdateDateTime,
 
   CURRENT_TIMESTAMP() AS load_datetime
 

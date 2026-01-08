@@ -4,8 +4,8 @@ SELECT
 
   dbt_utils.generate_surrogate_key([COALESCE(TRIM(LOWER(BookingID)), '')]) AS hub_booking_details_hashkey,
 
-  BookingID,
+  FlightID, PassengerID, Status, BookingDate, SeatNumber, SeatClass, PaymentID, CreatedDateTime, LastupdateDateTime,
 
   CURRENT_TIMESTAMP() AS load_datetime
 
-FROM {{ source('staging', 'SpiceJet_booking_details') }}
+FROM {{ source('staging', 'AirIndia_Booking_Details') }}
